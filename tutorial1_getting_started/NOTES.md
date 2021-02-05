@@ -15,7 +15,7 @@ If you find you're not able complete this week's assignment, reflecting on where
 
 ---
 
-## My Notes on Tutorial 0
+## My Notes on Tutorial 1
 
 - Minor challenges that I faced were navigating JS syntax and connecting it with HTML/CSS.
 - Commiting through VS Code was very convenient than I expected.
