@@ -18,5 +18,5 @@ If you find you're not able complete this week's assignment, reflecting on where
 ## My Notes on Tutorial 1
 
 - Minor challenges that I faced were navigating JS syntax and connecting it with HTML/CSS.
-- Commiting through VS Code was very convenient than I expected.
+- git commit through VS Code was very convenient than I expected.
 - Editing .md file is still confusing.
