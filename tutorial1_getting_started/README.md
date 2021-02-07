@@ -34,10 +34,10 @@ To receive full credit, you must post your stable path before the 12pm the day o
 
 ## Required Reading:
 
-- [ ] [Interneting Is Hard: Introduction, Basic Web Pages, Links and Images](https://www.internetingishard.com/html-and-css/)
-- [ ] [Javascript.info: Getting Started](https://javascript.info/getting-started)
-- [ ] [Javascript.info: Debugging Chrome](https://javascript.info/debugging-chrome)
-- [ ] [D3: Data-Driven Documents](http://vis.stanford.edu/files/2011-D3-InfoVis.pdf)
+- [x] [Interneting Is Hard: Introduction, Basic Web Pages, Links and Images](https://www.internetingishard.com/html-and-css/)
+- [x] [Javascript.info: Getting Started](https://javascript.info/getting-started)
+- [x] [Javascript.info: Debugging Chrome](https://javascript.info/debugging-chrome)
+- [x] [D3: Data-Driven Documents](http://vis.stanford.edu/files/2011-D3-InfoVis.pdf)
 
 ## Other Resources:
 
