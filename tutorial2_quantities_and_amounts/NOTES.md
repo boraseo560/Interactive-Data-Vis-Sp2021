@@ -15,10 +15,11 @@ If you find you're not able complete this week's assignment, reflecting on where
 
 ---
 
-1. x-axix and y-axis did not show,
-2.
-3.
+Multiple Challenges (response to Q1 and Q3 above):
 
-Study Notes
-_ What is SVG "g" element?: it is used for grouping SVG shapes together.
-_ What
+- How to get the x and y-axis (in both charts) to fit inside the svg? I tried it, but the labels were cut out of the svg. I realized that I need to understand the concept of margin.
+- How to move the x-axis (in the vertical chart) to the bottom of the bars?
+- How to show y-axis labels (in the horizontal chart) on the right side of each bar?
+- What is the difference between d => d.~ and function (d) return ~~~? Which one is more efficient?
+- How to apply color gradient across the bars?
+- How to set the relationship between divs in HTML and svgs in JS in single CSS file?
