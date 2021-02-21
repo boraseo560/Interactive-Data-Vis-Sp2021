@@ -1,3 +1,5 @@
+
+
 // data load 
 
 d3.csv('covid_data.csv', d3.autoType).then(data => {
@@ -26,9 +28,9 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .range([height - margin.bottom, margin.top])
 
     var myColor = d3.scaleSequential().domain([0, d3.max(data, d => d.Case)])
-        .interpolator(d3.interpolateInferno);
+        .interpolator(d3.interpolateRgb("red", "blue")); // How to apply opacity setting?
 
-    // bars 
+    // bars
     svgContainer.selectAll("rect")
         .data(data)
         .join("rect")
@@ -36,7 +38,7 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .attr("height", d => height - margin.bottom - yScale(d.Case))
         .attr("x", d => xScale(d.Date))
         .attr("y", d => yScale(d.Case))
-        .attr("fill", "orange")
+        .attr("fill", d => myColor(d.Case))
 
     // text 
     svgContainer.append("g")
@@ -72,8 +74,8 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .range([margin.top, height - margin.bottom])
         .paddingInner(.2)
 
-    // var myColor = d3.scaleSequential().domain([0, d3.max(data, d => d.Case)])
-    //     .interpolator(d3.interpolateInferno);
+    var myColorHori = d3.scaleSequential().domain([d3.max(data, d => d.Case), 0])
+        .interpolator(d3.interpolateRgb("red", "blue"));
 
     horiContainer.selectAll("rect")
         .data(data)
@@ -81,7 +83,7 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .attr("width", d => xScaleHori(d.Case))
         .attr("height", yScaleHori.bandwidth())
         .attr("y", d => yScaleHori(d.Date))
-        .attr("fill", "steelblue")
+        .attr("fill", d => myColorHori(d.Case))
 
     // text 
     horiContainer.append("g")

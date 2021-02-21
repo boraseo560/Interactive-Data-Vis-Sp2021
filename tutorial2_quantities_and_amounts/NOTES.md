@@ -21,5 +21,5 @@ Multiple Challenges (response to Q1 and Q3 above):
 - How to move the x-axis (in the vertical chart) to the bottom of the bars?
 - How to show y-axis labels (in the horizontal chart) on the right side of each bar?
 - What is the difference between d => d.~ and function (d) return ~~~? Which one is more efficient?
-- How to apply color gradient across the bars?
+- How to use interpolate?
 - How to set the relationship between divs in HTML and svgs in JS in single CSS file?
