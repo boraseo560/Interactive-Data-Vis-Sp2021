@@ -27,6 +27,7 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .domain([0, d3.max(data, d => d.Case)])
         .range([height - margin.bottom, margin.top])
 
+    // gradient color 
     var myColor = d3.scaleSequential().domain([0, d3.max(data, d => d.Case)])
         .interpolator(d3.interpolateRgb("red", "blue")); // How to apply opacity setting?
 
@@ -40,11 +41,12 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .attr("y", d => yScale(d.Case))
         .attr("fill", d => myColor(d.Case))
 
-    // text 
+    // x-axis lables 
     svgContainer.append("g")
         .attr("transform", "translate(0, ${height-bottom})") // Why is this not working?
         .call(d3.axisBottom(xScale))
 
+    // y-axis labels 
     svgContainer.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         // .call(d3.axisLeft(yScale))
@@ -60,11 +62,14 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .text(d => d3.format(",")(d.Case))
 
     // ** HORIZONTAL CHART **
+
+    // set svg 
     const horiContainer = d3.select(".horizontal-chart")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
 
+    // set x-axis and y-axis 
     const xScaleHori = d3.scaleLinear()
         .domain([0, d3.max(data, d => d.Case)])
         .range([0, width - margin.right])
@@ -74,9 +79,11 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .range([margin.top, height - margin.bottom])
         .paddingInner(.2)
 
+    // gradient color
     var myColorHori = d3.scaleSequential().domain([d3.max(data, d => d.Case), 0])
         .interpolator(d3.interpolateRgb("red", "blue"));
 
+    // x-axis labels 
     horiContainer.selectAll("rect")
         .data(data)
         .join("rect")
@@ -85,7 +92,7 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .attr("y", d => yScaleHori(d.Date))
         .attr("fill", d => myColorHori(d.Case))
 
-    // text 
+    // y-axis labels 
     horiContainer.append("g")
         .attr("transform", "translate(0, ${height - bottom})")
         .call(d3.axisBottom(xScaleHori))
@@ -93,7 +100,18 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
 
 
     horiContainer.append("g")
-        .attr("transform", "translate(0, margin.left)")
-        .call(d3.axisLeft(yScaleHori))
-
+        // .attr("transform", "translate(0, margin.left)")
+        // .call(d3.axisLeft(yScaleHori))
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        // .call(d3.axisLeft(yScale))
+        .selectAll("text.Case")
+        .data(data)
+        .join("text")
+        .attr("class", 'Case')
+        .attr("y", d => yScaleHori(d.Date) + yScaleHori.bandwidth() / 50)
+        .attr("x", d => xScaleHori(d.Case))
+        .attr("dy", "-.8em")
+        .attr("dx", "1em")
+        .attr("text-anchor", 'middle')
+        .text(d => d3.format(",")(d.Case))
 })
