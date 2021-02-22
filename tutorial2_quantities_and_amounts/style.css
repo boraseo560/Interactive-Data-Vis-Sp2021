@@ -7,7 +7,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: rgb(255, 236, 212);
+  background-color: rgb(164, 204, 226);
 }
 
 .title {

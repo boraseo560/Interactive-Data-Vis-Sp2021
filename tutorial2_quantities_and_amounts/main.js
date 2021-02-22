@@ -7,14 +7,8 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
 
     // set size of the svgContainer 
     const width = window.innerWidth * .8;
-    const height = 700;
-    const margin = ({ top: 30, right: 0, bottom: 30, left: 30 })
-
-    // creating svg container 
-    const svgContainer = d3.select(".vertical-chart")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+    const height = 768;
+    const margin = ({ top: 30, right: 30, bottom: 30, left: 30 })
 
     // set Scales 
     // get all the values in Date in data->scaleBand; all the values in Case in data->scaleLinear
@@ -25,14 +19,21 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
 
     const yScale = d3.scaleLinear()
         .domain([0, d3.max(data, d => d.Case)])
-        .range([height - margin.bottom, margin.top])
+        .range([height - margin.bottom, margin.top]);
+
+    // creating svg container 
+    const svgContainer = d3.select(".vertical-chart")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
 
     // gradient color 
-    var myColor = d3.scaleSequential().domain([0, d3.max(data, d => d.Case)])
-        .interpolator(d3.interpolateRgb("red", "blue")); // How to apply opacity setting?
+    var myColor = d3.scaleSequential().domain([d3.max(data, d => d.Case), 0])
+        .interpolator(d3.interpolateInferno) // How to apply opacity setting?
 
     // bars
-    svgContainer.selectAll("rect")
+    svgContainer.append("g")
+        .selectAll("rect")
         .data(data)
         .join("rect")
         .attr("width", xScale.bandwidth())
@@ -43,45 +44,46 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
 
     // x-axis lables 
     svgContainer.append("g")
-        .attr("transform", "translate(0, ${height-bottom})") // Why is this not working?
-        .call(d3.axisBottom(xScale))
+        .call(d3.axisBottom(xScale).tickSize(3))
+        .attr("transform", "translate(0, ${height-margin.bottom})") // Why is this not working?
+        .attr("font-size", "14")
 
     // y-axis labels 
-    svgContainer.append("g")
+    svgContainer.selectAll("text.Case")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         // .call(d3.axisLeft(yScale))
-        .selectAll("text.Case")
         .data(data)
         .join("text")
         .attr("class", 'Case')
-        .attr("x", d => xScale(d.Date) + (xScale.bandwidth() / 50))
+        .attr("x", d => xScale(d.Date) + (xScale.bandwidth() / 2))
         .attr("y", d => yScale(d.Case))
         // .attr("dx", "-.5em")
-        .attr("dy", "-2.3em")
+        .attr("dy", "-.5em")
         .attr("text-anchor", 'middle')
         .text(d => d3.format(",")(d.Case))
+        .attr("fill", "red")
 
     // ** HORIZONTAL CHART **
-
-    // set svg 
-    const horiContainer = d3.select(".horizontal-chart")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
 
     // set x-axis and y-axis 
     const xScaleHori = d3.scaleLinear()
         .domain([0, d3.max(data, d => d.Case)])
-        .range([0, width - margin.right])
+        .range([60, width - margin.right])
 
     const yScaleHori = d3.scaleBand()
         .domain(data.map(d => d.Date))
         .range([margin.top, height - margin.bottom])
         .paddingInner(.2)
 
+    // set svg 
+    const horiContainer = d3.select(".horizontal-chart")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+
     // gradient color
     var myColorHori = d3.scaleSequential().domain([d3.max(data, d => d.Case), 0])
-        .interpolator(d3.interpolateRgb("red", "blue"));
+        .interpolator(d3.interpolateInferno)
 
     // x-axis labels 
     horiContainer.selectAll("rect")
@@ -89,29 +91,36 @@ d3.csv('covid_data.csv', d3.autoType).then(data => {
         .join("rect")
         .attr("width", d => xScaleHori(d.Case))
         .attr("height", yScaleHori.bandwidth())
+        // .attr("x", d => 0)
         .attr("y", d => yScaleHori(d.Date))
         .attr("fill", d => myColorHori(d.Case))
 
     // y-axis labels 
-    horiContainer.append("g")
-        .attr("transform", "translate(0, ${height - bottom})")
-        .call(d3.axisBottom(xScaleHori))
-        .attr("text-anchor", 'end')
-
-
-    horiContainer.append("g")
-        // .attr("transform", "translate(0, margin.left)")
-        // .call(d3.axisLeft(yScaleHori))
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-        // .call(d3.axisLeft(yScale))
-        .selectAll("text.Case")
+    horiContainer.selectAll("text.Case")
+        // .append("g")
+        // .call(d3.axisBottom(xScaleHori))
+        // .attr("transform", "translate(0, ${height - bottom})")
+        // .attr("text-anchor", 'end')
+        // .attr("font-size", "14")
         .data(data)
         .join("text")
         .attr("class", 'Case')
-        .attr("y", d => yScaleHori(d.Date) + yScaleHori.bandwidth() / 50)
+        .attr("y", d => yScaleHori(d.Date) + (yScaleHori.bandwidth() / 2))
         .attr("x", d => xScaleHori(d.Case))
-        .attr("dy", "-.8em")
-        .attr("dx", "1em")
+        .attr("dy", ".3em")
+        .attr("dx", "1.5em")
         .attr("text-anchor", 'middle')
         .text(d => d3.format(",")(d.Case))
+    // .attr("fill", "red")
+
+    horiContainer.append("g")
+        // .selectAll("text.Date")
+        // .attr("transform", "translate(0, margin.left)")
+        .call(d3.axisLeft(yScaleHori).tickSize(3))
+        .attr("transform", "translate(65, 0)") //"translate(" + margin.left + "," + margin.top + ")"
+        .attr("font-size", "14") // Why does this not work? 
+    // .call(d3.axisLeft(yScale))
+    // .selectAll("text.Case")
+
+
 })
