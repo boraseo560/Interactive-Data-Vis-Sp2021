@@ -20,8 +20,17 @@ body {
 
 .vertical-chart,
 .horizontal-chart {
+  border: rgb(2, 2, 2) 1.5px solid;
   display: flex;
 }
+.vertical-chart {
+  padding-top: 5px;
+}
+
+.horizontal-chart {
+  margin-top: 20px;
+}
+
 .vertical-text,
 .horizontal-text {
   margin-left: 30px;
