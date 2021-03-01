@@ -5,9 +5,20 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <label for="dropdown">Filter Selection</label>
-    <select id="dropdown" name="dropdown"></select>
-    <div id="d3-container"> </div>
+    <div class="title">
+      <h2> Tutorial 3 </h2>
+      <h2> Bora Seo </h2>
+    </div>
+    <div class="description">
+      <span> **Data source: <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset"> Stroke Prediction Dataset (Kaggle)</a> </span>
+      <span> **Data with 'N/A' or 'Unknown' were excluded.</span>
+    </div>
+    <div class="dropdown-container">
+      <label for="dropdown">Filter Selection</label>
+      <select id="dropdown" name="dropdown"></select>
+    </div>
+    <div id="d3-container">
+    </div>
     <script src="../lib/d3.js"></script>
     <script src="main.js"></script>
   </body>

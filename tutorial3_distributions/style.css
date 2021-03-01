@@ -1,0 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+svg {
+  border: palevioletred 2px solid;
+}
