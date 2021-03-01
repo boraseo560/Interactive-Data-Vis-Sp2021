@@ -15,7 +15,6 @@ If you find you're not able complete this week's assignment, reflecting on where
 
 ---
 
-1. This week I was not able to do any exciting adventure. I only changed the size and colors of circle, and direction and duration in transition.
-2. I wanted to change the shape and find good reference, but failed to realize it. I was not sure about how to apply shapes, dropdown, and transition at the same time. (I should try changing shape first without dropdown or transition and then apply them.)
+- This week I was not able to do any exciting adventure. I mostly followed the recording from last week. (I only changed the size and colors of circle, and direction and duration in transition.)
 
-- Reference for scatter plot with different symbols: https://observablehq.com/@d3/scatterplot-with-shapes
+- I wanted to change the shape and find good reference, but failed to realize it. I was not sure about how to apply shapes, dropdown, and transition at the same time. I should try changing shape first without dropdown or transition and then apply them. (Reference for scatter plot with different symbols: https://observablehq.com/@d3/scatterplot-with-shapes)

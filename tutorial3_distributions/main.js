@@ -95,7 +95,7 @@ function init() {
     draw();
   })
 
-  // draw(); // calls the draw function
+  draw(); // calls the draw function
 };
 
 /* DRAW FUNCTION */
@@ -121,7 +121,7 @@ function draw() {
         // .attr("opacity", "0.5")
         .attr("fill", d => {
           if (d.stroke == "Had stroke") return "#fc3232"
-          else return "#2ea7fb"
+          else return "rgba(0,70,274, 0.3)"
         })
         .call(enter => enter.transition()
           .duration(1500)
