@@ -5,10 +5,28 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    Welcome to Interactive Data Visualization Tutorials
-    <label for="dropdown">Filter Selection</label>
-    <select id="dropdown" name="dropdown"></select>
+    <h2> Tutorial 4 </h2>
+    <h2> Bora Seo </h2>
+    <div class="description">
+      <p> This data shows changes of Average Annual Wages of OECD nations from 2000 through 2019. </br>Wages are converted to USD using PPP (Purchasing Power Parity) exchange rates.</p>
+      <p> Data Source: <a href="https://stats.oecd.org/Index.aspx?DataSetCode=RMW"> OECD.Stat </a></p>
+    </div>
+    <div class="singleline-dropdown drop">
+      <p> 1. Single line chart with dropdown </p>
+      <label for="dropdown">Filter Selection</label>
+      <select id="dropdown" name="dropdown"></select>
+    </div>
+    <div class="singleline-chart chart">
+    </div>
+    <div class="area-dropdown drop">
+      <p> 2. Area chart with dropdown </p>
+      <label for="area-dropdown">Filter Selection</label>
+      <select id="area-dropdown" name="area-dropdown"></select>
+    </div>
+    <div class="area-chart chart">
+    </div>
     <script src="../lib/d3.js"></script>
     <script src="main.js"></script>
+    <script src="area.js"></script>
   </body>
 </html>
