@@ -15,4 +15,8 @@ If you find you're not able complete this week's assignment, reflecting on where
 
 ---
 
-Will be updated 3/8 Morning
+I am confused about how to organize variable names/functions when I am creating multiple chart in single HTML page.
+
+1. Do I need to separate .js file for each chart?
+2. For global instances/variables, do they affect all .js file? / Can all .js file share global instances/variables without importing like Python?
+3. Do I need to change every variable/function names even though I am almost reusing them? Is there any way that I can save the resources?
