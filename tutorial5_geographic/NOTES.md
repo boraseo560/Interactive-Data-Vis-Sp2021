@@ -47,4 +47,6 @@ If you find you're not able complete this week's assignment, reflecting on where
 
    - const: Introduced in ES6, block({})-scoped, cannot be reassigned, cannot be redeclared
 
-3. What is Hoisting?: +https://developer.mozilla.org/en-US/docs/Glossary/Hoisting +https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html (Korean)
+3. What is Hoisting?:
+   - https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+   - https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html (Korean)
