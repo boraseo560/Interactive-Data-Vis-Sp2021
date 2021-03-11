@@ -21,8 +21,9 @@ If you find you're not able complete this week's assignment, reflecting on where
 
 2. "let" vs "var" vs "const": Different ways of declaring variables
 
-   +var: Used before ES6, function-scoped, can be reassigned, can be redeclared
-   +let: Introduced in ES6, block({})-scoped, can be reassigned, cannot be redeclared
+   - var: Used before ES6, function-scoped, can be reassigned, can be redeclared
+
+   - let: Introduced in ES6, block({})-scoped, can be reassigned, cannot be redeclared
 
    ```
    function fruitName() {
@@ -44,6 +45,6 @@ If you find you're not able complete this week's assignment, reflecting on where
    fruitName(); // Will show "Peach" (can be reassigned)
    ```
 
-   +const: Introduced in ES6, block({})-scoped, cannot be reassigned, cannot be redeclared
+   - const: Introduced in ES6, block({})-scoped, cannot be reassigned, cannot be redeclared
 
 3. What is Hoisting?: +https://developer.mozilla.org/en-US/docs/Glossary/Hoisting +https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html (Korean)
