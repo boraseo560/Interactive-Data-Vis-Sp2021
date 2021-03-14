@@ -50,3 +50,11 @@ If you find you're not able complete this week's assignment, reflecting on where
 3. What is Hoisting?:
    - https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
    - https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html (Korean)
+
+4. If there is space in a column name: 
+
+    ```
+    d => d['Column Name']
+    ```
+5. Formatting numbers: 
+    - http://bl.ocks.org/mstanaland/6106487
