@@ -14,6 +14,10 @@ Sometimes it helps to formulate what you understood and where you got stuck in o
 If you find you're not able complete this week's assignment, reflecting on where you are getting stuck here will help you get full credit for this week's tutorial
 
 ---
+# What did you have trouble solving? 
+
+I wanted to change the size of the circles by the values in TempChange. When I set the domain of d3.scaleLinear as min(TempChange) ~ max(TempChange), circles with negative values appeared weirdly. I first did not know why, but I figured out it was because I did not apply absolute when I was setting the attribute for radius.
+
 # Simple study notes
 
 1. How to write by Markdown: https://gist.github.com/ihoneymon/652be052a0727ad59601 (Korean)
