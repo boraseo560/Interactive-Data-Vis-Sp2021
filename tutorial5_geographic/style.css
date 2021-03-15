@@ -12,6 +12,9 @@ body {
     align-items: center;
   }
 
+.title {
+  text-align:center;
+}
 .hover-content{
   top: 0;
   left: 0;
