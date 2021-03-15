@@ -53,7 +53,6 @@ function init() {
   // .domain(d3.extent(state.geojson.features, d => d.properties.AWATER))
 
   const pathFunction = d3.geoPath(projection)
-
   // const graduateCenterCoords = [{long:-73.984, lat:40.7486}] 
 
   // create an svg element in our main `d3-container` element
