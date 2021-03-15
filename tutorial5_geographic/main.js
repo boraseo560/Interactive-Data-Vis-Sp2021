@@ -73,7 +73,7 @@ function init() {
     // })
     .attr("d", pathFunction)
 
-  radius = d3.scaleLinear([0, d3.max(state.heat, d => d.TempChange)], [3, 13])
+  radius = d3.scaleLinear([0, d3.max(state.heat, d => d.TempChange)], [3, 15])
 
   svg.selectAll("circle.point")
     .data(state.heat)
