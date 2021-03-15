@@ -67,7 +67,7 @@ function init() {
     .data(state.geojson.features)
     .join("path")
     .attr("stroke", "black")
-    .attr("fill", "#f8f1f1")
+    .attr("fill", "#fbf9f0")
     // .attr("fill", d => {
     //   return colorScale(d.properties.AWATER)
     // })
@@ -81,7 +81,7 @@ function init() {
     // .sort((a, b) => d3.descending(a['Change in 95 percent Days'], b['Change in 95 percent Days'])))
     .join("circle")
     .attr("r", d => radius(Math.abs(d.TempChange)))
-    .attr("stroke", "#ccc")
+    .attr("stroke", "white")
     .attr("fill", d => {
       if (d.TempChange > 0) return "#ef2d2d";
       else if (d.TempChange === 0) return "#ffa900"
@@ -118,7 +118,7 @@ function init() {
     .on("mouseout", function (event, d) {
       d3.select(this).transition()
         .duration("50")
-        .attr("stroke", "#ccc")
+        .attr("stroke", "#74787a")
         .attr("r", d => radius(Math.abs(d.TempChange)))
       state.hover.visible = false
       draw();
