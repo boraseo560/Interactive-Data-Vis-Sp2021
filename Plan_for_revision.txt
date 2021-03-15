@@ -1,0 +1,9 @@
+
+
+Tutorial2: Fix the charts, apply different aesthetics. 
+
+Tutorial3: Dropdown for more than 3 categories, different shapes of points, different transition
+
+Tutorial4: Drawing multiline chart, circle points on each value (tooltip: value)
+
+Tutorial5: Drawing map for South Korea, mousemove on province boundary (tooltip: Number of Starbucks branches by province)
