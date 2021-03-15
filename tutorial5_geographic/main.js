@@ -102,6 +102,7 @@ function init() {
       d3.select(this).transition()
         .duration("30")
         .attr("stroke", "black")
+        .attr("stroke-width", "2")
         .attr("r", 16)
       const { clientX, clientY } = event
       const [long, lat] = projection.invert([clientX, clientY])
@@ -147,7 +148,7 @@ function draw() {
       return `
       <div> State: ${d.stateName} </div>
       <div> Coordinate: ${d.mapPosition} </div>
-      <div> Temperature changes in 95 days: ${d3.format(".2f")(d.heatChange)} </div>
+      <div> ˚F changes in 95% of days: ${d3.format(".2f")(d.heatChange)} </div>
       `})
 
 }
