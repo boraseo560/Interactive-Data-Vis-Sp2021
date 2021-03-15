@@ -63,7 +63,7 @@ function init() {
     .attr("height", height);
 
   // base layer of states 
-  const states = svg.selectAll("path")
+  svg.selectAll("path")
     .data(state.geojson.features)
     .join("path")
     .attr("stroke", "black")
@@ -119,7 +119,7 @@ function init() {
       d3.select(this).transition()
         .duration("50")
         .attr("stroke", "#ccc")
-        .attr("r", d => radius(d.TempChange))
+        .attr("r", d => radius(Math.abs(d.TempChange)))
       state.hover.visible = false
       draw();
     })

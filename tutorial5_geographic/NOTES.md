@@ -14,10 +14,6 @@ Sometimes it helps to formulate what you understood and where you got stuck in o
 If you find you're not able complete this week's assignment, reflecting on where you are getting stuck here will help you get full credit for this week's tutorial
 
 ---
-# What, if anything, is currently blocking you?
-
-There is a problem that the circle points disappear after mousemove event, I was not able to find why and how to fix it.
-
 # Simple study notes
 
 1. How to write by Markdown: https://gist.github.com/ihoneymon/652be052a0727ad59601 (Korean)
