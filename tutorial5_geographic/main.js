@@ -90,7 +90,7 @@ function init() {
     })
     .attr("fill-opacity", d => {
       if (d.TempChange > 0) return "0.7"
-      else if (d.TempChange === 0) return "0.7"
+      else if (d.TempChange === 0) return "0.8"
       else return "0.7"
     })
     .attr("transform", d => {
