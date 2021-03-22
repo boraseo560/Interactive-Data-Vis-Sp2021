@@ -17,4 +17,4 @@ If you find you're not able complete this week's assignment, reflecting on where
 
 # What is blocking me?
 
-I tried to show tooltip at the postion that the mouse cursor is placed, but I am not sure how to do that.
+I tried to show tooltip boxes at the postion that the mouse cursor is placed, but the tooltip boxes are appearing at the center of each circle. I am not sure how to figure it out.

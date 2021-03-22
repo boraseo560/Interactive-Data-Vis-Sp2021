@@ -122,7 +122,7 @@ function draw() {
         <div>Hierarchy Path: ${state.hover.ancestorsPath}</div>
       `
       )
-      .style("font-size", "10px")
+      .style("font-size", "11px")
       .transition()
       .duration(180)
       .style("transform", `translate(${state.hover.position[0]}px, ${state.hover.position[1]}px )`)
