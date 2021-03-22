@@ -126,7 +126,7 @@ function drawPack() {
        <div>Hierarchy Path: ${statePack.hover.ancestorsPath} </div>
      `
             )
-            .style("font-size", "11px")
+            .style("font-size", "12px")
             .transition()
             .duration(200)
             .style("transform", `translate(${statePack.hover.position[0]}px, ${statePack.hover.position[1]}px )`)
