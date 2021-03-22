@@ -47,7 +47,9 @@ function init() {
     .style("top", 0)
     .style("left", 0)
     .style("background-color", "white")
-
+    .style("border-radius", "5px")
+    .style("box-shadow", "0 0 3px #4e4c4c")
+    .style("padding", "2.5px")
   // + CREATE YOUR ROOT HIERARCHY NODE
   const root = d3.hierarchy(state.data)
     .sum(d => d.value)

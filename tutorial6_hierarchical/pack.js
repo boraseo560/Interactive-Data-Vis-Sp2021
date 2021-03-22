@@ -26,7 +26,7 @@ d3.json("../data/flare.json", d3.autotype).then(data => {
 function initPack() {
 
     // const color = d3.scaleOrdinal(d3.schemeSet3)
-    const color = d3.scaleSequential([0, 8], d3.interpolateYlGnBu)
+    const color = d3.scaleSequentialSqrt([1, 8], ["#8da6a6", "#5f318a"])
     // console.log(state.data)
     const containerPack = d3.select("#pack-circle").style("position", "relative");
 
@@ -43,6 +43,9 @@ function initPack() {
         .style("top", 0)
         .style("left", 0)
         .style("background-color", "white")
+        .style("border-radius", "5px")
+        .style("box-shadow", "0 0 7px #4e4c4c")
+        .style("padding", "2.5px")
 
     // + CREATE YOUR ROOT HIERARCHY NODE 
     const rootPack = d3.hierarchy(statePack.data)

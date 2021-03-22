@@ -3,3 +3,14 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+
+rect:hover {
+  stroke: white;
+  stroke-width: 3px;
+  opacity: 0.4;
+}
+
+circle:hover {
+  stroke: #eb2852;
+  stroke-width: 2px;
+}

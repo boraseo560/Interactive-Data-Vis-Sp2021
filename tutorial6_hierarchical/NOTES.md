@@ -18,3 +18,5 @@ If you find you're not able complete this week's assignment, reflecting on where
 # What is blocking me?
 
 I tried to show tooltip boxes at the postion that the mouse cursor is placed, but the tooltip boxes are appearing at the center of each circle. I am not sure how to figure it out.
+
+- I made a change in .css file about the style when mouse is on the element, and I used Yuying's code as a reference.
